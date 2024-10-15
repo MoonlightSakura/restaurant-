@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Add Menu Item</title>
+</head>
+<body>
+    <nav>
+        <h1>Restaurant Management System</h1>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('add_menu_item') }}">Add Menu Item</a></li>
+            <li><a href="{{ url_for('add_reservation') }}">Add Reservation</a></li>
+            <li><a href="{{ url_for('bookings') }}">View Bookings</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Add Menu Item</h2>
+        <form method="POST">
+            <label class="form-label" for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label class="form-label" for="price">Price:</label>
+            <input type="text" id="price" name="price" required><br>
+            <label class="form-label" for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea><br>
+            <input type="submit" value="Add Item">
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Restaurant Management System</p>
+    </footer>
+</body>
+</html>

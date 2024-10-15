@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>View Bookings</title>
+</head>
+<body>
+    <nav>
+        <h1>Restaurant Management System</h1>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('add_menu_item') }}">Add Menu Item</a></li>
+            <li><a href="{{ url_for('add_reservation') }}">Add Reservation</a></li>
+            <li><a href="{{ url_for('bookings') }}">View Bookings</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>View Bookings</h2>
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Guests</th>
+            </tr>
+            {% for reservation in reservations %}
+            <tr>
+                <td>{{ reservation.name }}</td>
+                <td>{{ reservation.date }}</td>
+                <td>{{ reservation.time }}</td>
+                <td>{{ reservation.guests }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <footer>
+        <p>&copy; 2024 Restaurant Management System</p>
+    </footer>
+</body>
+</html>
